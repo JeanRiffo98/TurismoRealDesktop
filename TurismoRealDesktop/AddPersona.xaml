@@ -1,0 +1,62 @@
+﻿<Window x:Class="TurismoRealDesktop.AddPersona"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TurismoRealDesktop"
+        mc:Ignorable="d"
+        Title="AddPersona" Height="750" Width="500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="{x:Null}"
+        AllowsTransparency="True">
+    <Grid Background="#F6F6F8">
+        <materialDesign:Card Margin="10" UniformCornerRadius="15">
+            <Grid>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 25">
+                    <TextBlock HorizontalAlignment="Center" FontSize="44" FontWeight="Bold" Foreground="Black" Text="Crear Persona"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0 100 0 0">
+
+                    <TextBlock Text="Rut" HorizontalAlignment="Center" FontSize="18" Margin="0 10" FontWeight="SemiBold"/>
+                    <TextBox x:Name="txtRut" Text="" materialDesign:HintAssist.Hint="Ingresa el rut de la persona" FontSize="18"/>
+
+                    <TextBlock Text="Nombres" HorizontalAlignment="Center" FontSize="18" Margin="0 10" FontWeight="SemiBold"/>
+                    <TextBox Name="txtNombres" materialDesign:HintAssist.Hint="Ingrese nombres" HorizontalContentAlignment="Center" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Width="200" Margin="0 0 0 20"/>
+
+                    <TextBlock Text="Apellidos" HorizontalAlignment="Center" FontSize="18" Margin="0 10" FontWeight="SemiBold"/>
+                    <TextBox Name="txtApellidos" materialDesign:HintAssist.Hint="Ingrese apellidos" HorizontalContentAlignment="Center" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Width="200" Margin="0 0 0 20"/>
+
+                    <TextBlock Text="Telefono" HorizontalAlignment="Center" FontSize="18" Margin="0 10" FontWeight="SemiBold"/>
+                    <TextBox Name="txtTelefono" materialDesign:HintAssist.Hint="Ingrese telefono" HorizontalContentAlignment="Center" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" Width="200" Margin="0 0 0 20"/>
+                    
+                    <TextBlock Text="Correo" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold"/>
+                    <TextBox Name="txtCorreo" materialDesign:HintAssist.Hint="Ingresar correo" HorizontalContentAlignment="Center" FontWeight="SemiBold" HorizontalAlignment="Center" Width="160" FontSize="18" Cursor="IBeam"/>
+                    
+                    <Button HorizontalAlignment="Center" Content="Publicar"
+                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                            materialDesign:ButtonAssist.CornerRadius="10"
+                            FontSize="23"
+                            Width="200"
+                            Height="40"
+                            Margin="0 47 0 0"
+                            Name="btnPublicar" Click="btnPublicar_Click" Cursor="Hand">
+                    </Button>
+                    <Button HorizontalAlignment="Center" Content="Cancelar"
+                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                            materialDesign:ButtonAssist.CornerRadius="10"
+                            FontSize="23"
+                            Width="200"
+                            Height="40"
+                            Margin="0 40 0 0"
+                            Name="btnCancelar" Cursor="Hand" Click="btnCancelar_Click">
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>

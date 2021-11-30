@@ -1,0 +1,183 @@
+﻿<Window x:Class="TurismoRealDesktop.AddReserva"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TurismoRealDesktop"
+        mc:Ignorable="d"
+        Title="AddReserva" Height="1000" Width="1800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="{x:Null}"
+        AllowsTransparency="True">
+    <Grid Background="#F6F6F8">
+        <Grid.Resources>
+            <Style TargetType="materialDesign:PackIcon">
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+            </Style>
+        </Grid.Resources>
+        <materialDesign:Card Margin="10" UniformCornerRadius="15">
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Añadir Reserva" FontSize="44" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="100 100 0 0">
+
+                    <TextBlock Text="Datos de Reserva" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0 0 0 60"/>
+
+                    <TextBlock Text="Codigo" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="txtCodigo" Text="" FontSize="25" materialDesign:HintAssist.Hint="Ingrese código" Margin="0 0 0 30"/>
+
+                    <TextBlock Text="Fecha Entrada" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                    <DatePicker x:Name="dtFechaEntrada" Text="" FontSize="25" Margin="0 0 0 30"/>
+
+                    <TextBlock Text="Fecha Salida" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                    <DatePicker x:Name="dtFechaSalida" Text="" FontSize="25" Margin="0 0 0 30"/>
+
+                    <TextBlock Text="Fecha Reserva" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="txtFechaReserva" Text="" FontSize="25" Margin="0 0 0 30"/>
+
+                    <TextBlock Text="Precio" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="txtPrecio" Text="" FontSize="25" Margin="0 0 0 30"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 -660 480 0">
+
+
+                    <TextBlock Text="Seleccionar Persona" FontSize="32" FontWeight="SemiBold" Margin="0 0 0 60" HorizontalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBox x:Name="txtRutPersona" BorderThickness="2" 
+                             Text="" materialDesign:HintAssist.Hint="Buscar por Rut" FontSize="25"
+                             BorderBrush="{DynamicResource MaterialDesignDivider}"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox }"
+                             Height="70"
+                             Margin="25 0"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 25 0"
+                        BorderBrush="{x:Null}"
+                        Background="{x:Null}"
+                        Foreground="Black"
+                        ToolTip="Buscar"
+                        Name="btnBuscarRutPersona" Click="btnBuscarPersona_Click">
+                            <StackPanel Margin="5">
+                                <materialDesign:PackIcon Kind="Search"/>
+                            </StackPanel>
+
+                        </Button>
+                    </StackPanel>
+
+                    <DataGrid Height="300" Width="350" Margin="25 25" Name="dtgListPersona" AutoGenerateColumns="False"  CanUserAddRows="False" CanUserResizeRows="False" CanUserDeleteRows="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Visibility="Hidden" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Visibility="Visible" Header="Rut" Binding="{Binding Rut}"/>
+                            <DataGridTextColumn Visibility="Visible" Header="Nombres" Binding="{Binding Nombres}" />
+                            <DataGridTextColumn Visibility="Visible" Header="Apellidos" Binding="{Binding Apellidos}"/>
+                            <DataGridTextColumn Visibility="Hidden" Header="Telefono" Binding="{Binding Telefono}"/>
+                            <DataGridTextColumn Visibility="Hidden" Header="Correo" Binding="{Binding Correo}"/>
+                            <DataGridTextColumn Visibility="Hidden" Header="Contraseña" Binding="{Binding Contraseña}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button x:Name="btnGoAddPersona" Content="Nueva Persona" FontSize="25" Width="200" Height="60" Margin="0 25" Click="btnGoAddPersona_Click" Cursor="Hand"/>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 -660 550 0">
+
+
+                    <TextBlock Text="Seleccionar Conjunto" FontSize="32" FontWeight="SemiBold" Margin="0 0 0 60" HorizontalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBox x:Name="txtNombreConjunto" BorderThickness="2" 
+                             Text="" materialDesign:HintAssist.Hint="Buscar por nombre" FontSize="25"
+                             BorderBrush="{DynamicResource MaterialDesignDivider}"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox }"
+                             Height="70"
+                             Margin="25 0"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 25 0"
+                        BorderBrush="{x:Null}"
+                        Background="{x:Null}"
+                        Foreground="Black"
+                        ToolTip="Buscar"
+                        Name="btnBuscarNombreConjunto" Click="btnBuscarConjunto_Click">
+                            <StackPanel Margin="5">
+                                <materialDesign:PackIcon Kind="Search"/>
+                            </StackPanel>
+
+                        </Button>
+                    </StackPanel>
+
+                    <DataGrid Height="300" Width="320" Margin="25 25" Name="dtgListConjunto" AutoGenerateColumns="False"  CanUserAddRows="False" CanUserResizeRows="False" CanUserDeleteRows="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Visibility="Hidden" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Visibility="Visible" Header="Codigo" Binding="{Binding Codigo}"/>
+                            <DataGridTextColumn Visibility="Visible" Header="Nombre" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Visibility="Visible" Header="Total a Pagar" Binding="{Binding Total}"/>
+                            <DataGridTextColumn Visibility="Hidden" Header="IdVehiculo" Binding="{Binding IdVehiculo}"/>
+                            <DataGridTextColumn Visibility="Hidden" Header="IdEstacionamiento" Binding="{Binding IdEstacionamiento}"/>
+                            <DataGridTextColumn Visibility="Hidden" Header="IdTour" Binding="{Binding IdTour}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    <Button x:Name="btnGuardarReserva" Content="Reservar" FontSize="25" Width="200" Height="60" Margin="0 200" Click="btnGuardarReserva_Click"/>
+                </StackPanel>
+                <Grid HorizontalAlignment="Right" Margin="0 -985 150 0">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 0 0 0">
+                        
+                        <TextBlock Text="Seleccionar Departamento" FontSize="32" FontWeight="SemiBold" Margin="0 0 0 60" HorizontalAlignment="Center"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBox x:Name="txtBuscarDepto" BorderThickness="2" 
+                             Text="" materialDesign:HintAssist.Hint="Buscar por Titulo" FontSize="25"
+                             BorderBrush="{DynamicResource MaterialDesignDivider}"
+                             Style="{StaticResource MaterialDesignOutlinedTextBox }"
+                             Height="70"
+                             Margin="25 0"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 25 0"
+                        BorderBrush="{x:Null}"
+                        Background="{x:Null}"
+                        Foreground="Black"
+                        ToolTip="Buscar"
+                        Name="btnBuscarTituloDepto" Click="btnBuscarTituloDepto_Click" >
+                                <StackPanel Margin="5">
+                                    <materialDesign:PackIcon Kind="Search"/>
+                                </StackPanel>
+
+                            </Button>
+                        </StackPanel>
+
+                        <DataGrid Height="300" Width="320" Margin="25 25" Name="dtgListDepto" AutoGenerateColumns="False"  CanUserAddRows="False" CanUserResizeRows="False" CanUserDeleteRows="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Visibility="Hidden" Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Región" Binding="{Binding ZonaDepto}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Titulo" Binding="{Binding Titulo}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Habitaciones" Binding="{Binding Habitaciones}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Baños" Binding="{Binding Baños}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Wifi" Binding="{Binding Wifi}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Precio Noche" Binding="{Binding PrecioNoche}"/>
+                                <DataGridTextColumn Visibility="Hidden" Header="Fecha Publicacion" Binding="{Binding FechaPublicacion}"/>
+                                <DataGridTextColumn Visibility="Hidden" Header="Fecha Adquisicion" Binding="{Binding FechaAdquisicion}"/>
+                                <DataGridTextColumn Visibility="Hidden" Header="Disponibilidad" Binding="{Binding Disponibilidad}"/>
+                                <DataGridTextColumn Visibility="Hidden" Header="Descripcion" Binding="{Binding Descripcion}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Television" Binding="{Binding Television}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Maximo Personas" Binding="{Binding CantPersonasMax}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Direccion" Binding="{Binding Direccion}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Numero depto" Binding="{Binding NroDepto}"/>
+                                <DataGridTextColumn Visibility="Visible" Header="Camas" Binding="{Binding CantCamas}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        
+                        <Button x:Name="btnCancelar" Content="Cancelar" FontSize="25" Width="200" Height="60" Margin="0 200" Click="btnCancelar_Click"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>
