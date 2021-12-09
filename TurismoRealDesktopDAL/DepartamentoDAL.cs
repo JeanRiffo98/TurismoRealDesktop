@@ -103,7 +103,6 @@ namespace TurismoRealDesktopDAL
                 cnx.Close();
 
                 return true;
-
             }
             catch (OracleException e)
             {
@@ -114,7 +113,6 @@ namespace TurismoRealDesktopDAL
             }
         }
 
-        //Metodo que Actualiza en la BD
         public bool UpdateDepartamento(DepartamentoDAL departamentoDAL)
         {
             try
@@ -158,7 +156,6 @@ namespace TurismoRealDesktopDAL
             }
         }
 
-        //Metodo que Borra en la BD
         public bool DeleteDepartamento(int id)
         {
             try
@@ -187,16 +184,12 @@ namespace TurismoRealDesktopDAL
             }
         }
 
-        //Metodo que Selecciona todos los Clientes de la tabla Cliente
         public DataTable GetAllDepartamento()
         {
             DataSet dataset = new DataSet();
             DataTable tabla = new DataTable();
             try
             {
-
-                
-
                 OracleConnection cnxDB = ConnectionDB.Connection;
 
                 string sqlStatement = "SELECT id_depto,habitaciones,banios,wifi,precio_nochedepto,fecha_publicacion, fecha_adquisicion, disponibilidad, titulo, descripcion, television, cant_personasmax,direccion,nro_depto,cant_camas,zona_depto FROM Departamento";
@@ -207,13 +200,10 @@ namespace TurismoRealDesktopDAL
 
                 oracleDataAdapter.Fill(dataset, "DEPARTAMENTO");
 
-
                 tabla = dataset.Tables["DEPARTAMENTO"];
 
                 //OracleCommand cmd = new OracleCommand(sqlStatement,cnxDB);
                 //cmd.CommandType = CommandType.Text;
-
-
 
                 //OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
 
@@ -230,7 +220,6 @@ namespace TurismoRealDesktopDAL
             }
         }
 
-        //Metodo que Selecciona Clientes segun Rut
         public DataTable GetDepartamentoByTitulo(string titulo)
         {
             DataTable tabla = new DataTable();

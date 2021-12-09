@@ -27,7 +27,7 @@ namespace TurismoRealDesktop
             this.IdDepto = id;
             txtBlockTitulo.Text = titulo;
 
-            //CargarDataGrid();
+            CargarDataGrid();
 
         }
 
@@ -68,23 +68,11 @@ namespace TurismoRealDesktop
 
         private void CargarDataGrid()
         {
-            //ImagenBLL imagenBLL = new ImagenBLL();
+            ImagenBLL imagenBLL = new ImagenBLL();
 
-            //List<ImagenBLL> listadoImagenes = imagenBLL.TraerTodas();
+            List<ImagenBLL> listadoImagenes = imagenBLL.TraerTodas();
 
-            //byte[] imagen = imagenBLL.Imagen;
-
-            //MemoryStream ms = new MemoryStream(imagen);
-            //Image image =
-
-            //if (listadoImagenes.Count <= 0)
-            //{
-            //    MessageBox.Show("Sin registros");
-            //}
-            //else
-            //{
-            //    dtgImagenes.ItemsSource = listadoImagenes;
-            //}
+            dtgImagenes.ItemsSource = listadoImagenes;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

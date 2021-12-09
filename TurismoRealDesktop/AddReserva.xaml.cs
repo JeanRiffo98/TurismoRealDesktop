@@ -32,7 +32,6 @@ namespace TurismoRealDesktop
 
         private void btnGuardarReserva_Click(object sender, RoutedEventArgs e)
         {
-            //Preparar datos de Reserva
             ReservaBLL reservaBLL = new ReservaBLL();
             PersonaBLL objpersonaBLL = (PersonaBLL)dtgListPersona.SelectedItem;
             DepartamentoBLL objdepartamentoBLL = (DepartamentoBLL)dtgListDepto.SelectedItem;
@@ -71,7 +70,6 @@ namespace TurismoRealDesktop
                 MessageBox.Show("Reserva registrada exitosamente", "Reserva Creada", MessageBoxButton.OK);
                 this.Close();
             }
-
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

@@ -108,6 +108,38 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
+                
+                <Grid>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="150" Margin="25 0">
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="25 0">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    BorderBrush="{x:Null}"
+                                    Background="{x:Null}"
+                                    Foreground="Black"
+                                    ToolTip="Check In"
+                                    Name="btnGoAddCheckIn" Cursor="Hand" Click="btnGoAddCheckIn_Click">
+                                <StackPanel Margin="5">
+                                    <materialDesign:PackIcon Kind="MapMarkerDown"/>
+                                </StackPanel>
+                            </Button>
+                            <TextBlock x:Name="lblCheckIn" Text="Check In" FontSize="20" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="25 0">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    BorderBrush="{x:Null}"
+                                    Background="{x:Null}"
+                                    Foreground="Black"
+                                    ToolTip="Check Out"
+                                    Name="btnGoAddCheckOut" Cursor="Hand" Click="btnGoAddCheckOut_Click">
+                                <StackPanel Margin="5">
+                                    <materialDesign:PackIcon Kind="MapMarkerUp"/>
+                                </StackPanel>
+                            </Button>
+                            <TextBlock x:Name="lblCheckOut" Text="Check Out" FontSize="20" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </StackPanel>
         </materialDesign:Card>
     </Grid>

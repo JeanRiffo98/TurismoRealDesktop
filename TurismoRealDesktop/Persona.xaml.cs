@@ -53,5 +53,19 @@ namespace TurismoRealDesktop
 
             dtgPersona.ItemsSource = listadoPersona;
         }
+
+        private void btnGoAddCheckIn_Click(object sender, RoutedEventArgs e)
+        {
+            AddCheckIn addCheckIn = new AddCheckIn();
+            addCheckIn.ShowDialog();
+        }
+
+        private void btnGoAddCheckOut_Click(object sender, RoutedEventArgs e)
+        {
+            PersonaBLL objPersona = (PersonaBLL)dtgPersona.SelectedItem;
+
+            AddCheckOut addCheckOut = new AddCheckOut(objPersona.Id);
+            addCheckOut.ShowDialog();
+        }
     }
 }

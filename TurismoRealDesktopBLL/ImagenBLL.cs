@@ -80,7 +80,7 @@ namespace TurismoRealDesktopBLL
 
                 objImagen.Id = id;
                 objImagen.Imagen = imagen;
-                objImagen.IdDepto = IdDepto;
+                objImagen.IdDepto = idDepto;
 
                 listImagen.Add(objImagen);
                 i++;
